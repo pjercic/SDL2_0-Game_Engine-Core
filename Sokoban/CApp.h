@@ -1,3 +1,26 @@
+/*! \file CApp.h
+    \brief Header definitions for the core of our program.
+    
+    Details.
+*/
+
+/*! \var bool Running
+    \brief This is our exit out of the game loop.
+    
+    When this is set to false, it will end the program, and in turn exit the program.
+*/
+
+/*! \fn int OnExecute()
+    \brief Each iteration of the loop we do something with data, and render accordingly. Events are extra, as a means for the user to manipulate data as well. In that sense, Events aren't required to make a game, but are needed when you want the user to be able to manipulate data (such as move a NPC to the left). 
+*/
+
+
+/*! \fn void OnLButtonDown(int mX, int mY)
+    \brief Event for left click .
+    \param mX X position.
+    \param mY Y position.
+*/
+
 #ifndef _CAPP_H_
     #define _CAPP_H_
  
@@ -13,6 +36,10 @@
 #include "CPlayer.h"
 #include "CSoundBank.h"
  
+//!  A core program class.
+/*!
+  A more elaborate class description.
+*/
 class CApp : public CEvent {
     private:
         bool            Running;
@@ -47,6 +74,8 @@ class CApp : public CEvent {
 
 		int CurrentPlayer;
 
+		//! An enum.
+		/*! More detailed enum description. */
 		enum {
 			GRID_TYPE_NONE = 0,
 			GRID_TYPE_X,
@@ -55,6 +84,10 @@ class CApp : public CEvent {
  
     public:
 
+		//! A constructor.
+		/*!
+		  A more elaborate description of the constructor.
+		*/
         CApp();
  
         int OnExecute();
