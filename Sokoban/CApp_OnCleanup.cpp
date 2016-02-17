@@ -1,11 +1,15 @@
 #include "CApp.h"
- 
+
+//! An game destructor.
+/*!
+	We basically quit out of SDL. You should take note that in this function is where you would free other surfaces as well. This keeps all your code centralized to the function its performing.
+*/
 void CApp::OnCleanup() {
 	SDL_FreeSurface(Surf_Grid);
 	SDL_FreeSurface(Surf_X);
 	SDL_FreeSurface(Surf_O);
     SDL_FreeSurface(Surf_Test);
-    SDL_FreeSurface(Surf_Display);
+    SDL_FreeSurface(Surf_Display);	/*!< \brief To keep things tidy, lets also set the Surf_Display pointer to NULL. */
 
 	for (int i = 0; i < CEntity::EntityList.size(); i++) {
 		if (!CEntity::EntityList[i]) continue;
@@ -19,7 +23,7 @@ void CApp::OnCleanup() {
 
 	CSoundBank::SoundControl.OnCleanup();
  
-	Mix_CloseAudio();
+	Mix_CloseAudio();	/*!< \brief Close AUDIO. */
 
-    SDL_Quit();
+    SDL_Quit();	/*!< \brief Quit SDL. */
 }

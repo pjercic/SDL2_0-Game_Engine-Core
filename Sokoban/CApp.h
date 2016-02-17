@@ -10,10 +10,43 @@
     When this is set to false, it will end the program, and in turn exit the program.
 */
 
-/*! \fn int OnExecute()
-    \brief Each iteration of the loop we do something with data, and render accordingly. Events are extra, as a means for the user to manipulate data as well. In that sense, Events aren't required to make a game, but are needed when you want the user to be able to manipulate data (such as move a NPC to the left). 
+/*! \var SDL_Window* window;
+    \brief Holds the handler to our window (main)
+    
+    When we need data about the window our game is running in (currently main), we ue this variable.
 */
 
+/*! \var SDL_Surface* Surf_Display;
+    \brief An SDL Surface is anything that can be drawn, or drawn to. 
+	
+	Say we have a blank piece of paper, a pencil, and some stickers; this paper could be called our display "surface." We can draw to it, put stickers on it, or whatever. The stickers we have are also surfaces; we can draw on them and put other stickers on them as well. So, Surf_Display is simply our "piece of blank paper" that we will draw all our stuff on.
+*/
+
+/*! \fn CApp()
+    \brief A contructor in HEAD.
+	
+	Elaborate details for construxctor in HEAD.
+*/
+
+/*! \fn int OnExecute()
+    \brief It's important to understand that games are one gigantic loop. Within this loop we find events, update data, and render pictures.
+	
+	Each iteration of the loop we do something with data, and render accordingly. Events are extra, as a means for the user to manipulate data as well. In that sense, Events aren't required to make a game, but are needed when you want the user to be able to manipulate data (such as move a NPC to the left).
+*/
+
+/*! \fn int bool OnInit()
+    \brief Initialize our game
+*/
+
+/*! \fn void OnEvent(SDL_Event* Event)
+    \brief Process events
+	
+	The SDL event structure is broken down into types. These types can range from keypresses, to mouse movements; what we simply are doing here is checking the event type.
+*/
+
+/*! \fn int OnCleanup()
+    \brief Clean up object and quit SDL
+*/
 
 /*! \fn void OnLButtonDown(int mX, int mY)
     \brief Event for left click .
@@ -42,7 +75,8 @@
 */
 class CApp : public CEvent {
     private:
-        bool            Running;
+	
+        bool            Running;	//	This is our exit out of the game loop. When this is set to false, it will end the program, and in turn exit the program.
 
 		//The window we'll be rendering to
 		SDL_Window* window;
@@ -86,7 +120,7 @@ class CApp : public CEvent {
 
 		//! A constructor.
 		/*!
-		  A more elaborate description of the constructor.
+		  A more elaborate description of the constructor in H.
 		*/
         CApp();
  

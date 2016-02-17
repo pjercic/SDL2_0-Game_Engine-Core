@@ -1,12 +1,18 @@
 #include "CApp.h"
  
+//! An game initialization.
+/*!
+	The first thing we need to do is start up SDL itself, so we can access its functions. We are telling SDL to Initialize everything it has; there are other parameters you can pass, but understanding them at this point is not important. The next function we use is SDL_SetVideoMode. This bad boy is what creates our window, and our surface. It takes 4 parameters: The width of the window, the height of the window, the bit resolution of the window (recommended to be 16 or 32), and then display flags. There are quite a few display flags, but the ones shown above are fine for now. The first flag tells SDL to use hardware memory for storing our images and such, and the second flag tells SDL to use double buffering (which is important if you don't want flickering on your screen). Another flag that may interest you now is SDL_FULLSCREEN, which makes the window go fullscreen.
+*/
 bool CApp::OnInit() {
 
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+		printf("Failed to initialize SDL: %s\n", SDL_GetError());
         return false;
     }
 
 	if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) < 0) {
+		printf("Failed to initialize AUDIO: %s\n", SDL_GetError());
 		return false;
 	}
 	
@@ -17,6 +23,7 @@ bool CApp::OnInit() {
  
 	//Get window surface
     if((Surf_Display = SDL_GetWindowSurface(window)) == NULL) {
+		printf("Failed to create our main display Surface! SDL_Error: %s\n", SDL_GetError());
         return false;
     }
 

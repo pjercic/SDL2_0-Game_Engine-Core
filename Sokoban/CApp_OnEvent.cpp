@@ -1,5 +1,9 @@
 #include "CApp.h"
- 
+
+//! An event procesing delegate.
+/*!
+	Calling CEvent object to resolve the SDL_Event.
+*/
 void CApp::OnEvent(SDL_Event* Event) {
     CEvent::OnEvent(Event);
 }

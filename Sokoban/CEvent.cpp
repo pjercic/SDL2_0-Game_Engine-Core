@@ -6,7 +6,11 @@ CEvent::CEvent() {
 CEvent::~CEvent() {
     //Do nothing
 }
- //e.key.keysym.sym
+
+//! An event procesor.
+/*!
+	The type above we are looking for is the request to close the window (i.e., when the user clicks the X button). If that event happens to take place, we set Running to false, thus ending our program. Simple enough.
+*/
 void CEvent::OnEvent(SDL_Event* Event) {
     switch(Event->type) {
         case SDL_WINDOWEVENT: {
