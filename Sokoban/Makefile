@@ -19,8 +19,8 @@ COMPILER_FLAGS = -w -Wl,-subsystem,windows
 LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -lSDL2_image
 
 #OBJ_NAME specifies the name of our exectuable 
-OBJ_NAME = Sokoban_mingw
+OBJ_NAME = ..\Debug\Sokoban_mingw
  
-#This is the target that compiles our executable 
+#This is the target that compiles our executable -E _CRT_SECURE_NO_WARNINGS
 all : $(OBJS) 
 	$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)

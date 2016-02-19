@@ -11,8 +11,8 @@ void CApp::OnRender() {
 	SDL_Rect Rect;
 	Rect.x = 0;
 	Rect.y = 0;
-	Rect.w = WWIDTH;
-	Rect.h = WHEIGHT;
+	Rect.w = SCREEN_WIDTH;
+	Rect.h = SCREEN_HEIGHT;
 
 	SDL_FillRect(Surf_Display, &Rect, 0);
 	
