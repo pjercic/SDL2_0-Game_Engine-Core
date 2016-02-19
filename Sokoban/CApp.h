@@ -84,6 +84,7 @@ class CApp : public CEvent {
  
 		//	Test surface
         SDL_Surface*    Surf_Test;
+		SDL_Surface*    Surf_Test_BG;
 
 	private:
 		SDL_Surface*    Surf_Grid;

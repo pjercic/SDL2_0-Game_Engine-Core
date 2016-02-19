@@ -9,6 +9,7 @@ void CApp::OnCleanup() {
 	SDL_FreeSurface(Surf_X);
 	SDL_FreeSurface(Surf_O);
     SDL_FreeSurface(Surf_Test);
+	SDL_FreeSurface(Surf_Test_BG);
     SDL_FreeSurface(Surf_Display);	/*!< \brief To keep things tidy, lets also set the Surf_Display pointer to NULL. */
 
 	for (int i = 0; i < CEntity::EntityList.size(); i++) {

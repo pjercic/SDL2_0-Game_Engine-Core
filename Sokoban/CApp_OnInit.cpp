@@ -28,76 +28,16 @@ bool CApp::OnInit() {
     }
 
 	/*! \brief load an image. */
-	if((Surf_Test = CSurface::OnLoad("./gfx/yoshi.bmp", Surf_Display)) == NULL) {
+	if((Surf_Test = CSurface::OnLoad("./gfx/bluePADDLE.png", Surf_Display)) == NULL) {
 		printf("Failed to load an image\n");
         return false;
     }
 
-	CSurface::Transparent(Surf_Test, 255, 0, 255);
-
-	if ((Surf_Grid = CSurface::OnLoad("./gfx/grid.bmp", Surf_Display)) == NULL) {
-		return false;
-	}
-
-	if ((Surf_X = CSurface::OnLoad("./gfx/x.bmp", Surf_Display)) == NULL) {
-		return false;
-	}
-
-	if ((Surf_O = CSurface::OnLoad("./gfx/o.bmp", Surf_Display)) == NULL) {
-		return false;
-	}
-
-	CSurface::Transparent(Surf_X, 255, 0, 255);
-	CSurface::Transparent(Surf_O, 255, 0, 255);
-
-	Reset();
-
-	Anim_Yoshi.MaxFrames = 8;
-
-	Anim_Yoshi.Oscillate = false;
-
-	if (Entity1.OnLoad("./gfx/yoshi.bmp", 64, 64, 8, Surf_Display) == false) {
-		return false;
-	}
-
-	if (Entity2.OnLoad("./gfx/cat.png", 512, 256, 8, Surf_Display) == false) {
-		return false;
-	}
-
-	Entity2.X = 100;
-
-	CEntity::EntityList.push_back(&Entity1);
-	CEntity::EntityList.push_back(&Entity2);
-
-	if (CArea::AreaControl.OnLoad("./maps/1.area",Surf_Display) == false) {
-		return false;
-	}
-
-	//	
-
-	if(Player.OnLoad("./gfx/yoshi.png", 64, 64, 8, Surf_Display) == false) {
-		return false;
-	}
- 
-	if(Player2.OnLoad("./gfx/yoshi.png", 64, 64, 8, Surf_Display) == false) {
-		return false;
-	}
- 
-	Player2.X = 100;
- 
-	CEntity::EntityList.push_back(&Player);
-	CEntity::EntityList.push_back(&Player2);
-
-	CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
-	CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);
-
-	if((SoundA = CSoundBank::SoundControl.OnLoad("./sfx/sounda.wav")) == -1) {
-		return false;
-	}
- 
-	if((SoundB = CSoundBank::SoundControl.OnLoad("./sfx/soundb.wav")) == -1) {
-		return false;
-	}
+	/*! \brief load an image. */
+	if((Surf_Test_BG = CSurface::OnLoad("./gfx/tileset.png", Surf_Display)) == NULL) {
+		printf("Failed to load an image\n");
+        return false;
+    }
 
 	//	If needed, filter out rpeated events with 
 
