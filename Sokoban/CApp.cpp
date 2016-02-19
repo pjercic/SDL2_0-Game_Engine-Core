@@ -32,7 +32,7 @@ CApp::CApp() {
 
 	CurrentPlayer = 0;
 
-	Surf_Grid = NULL;
+	Surf_Grid = NULL;	/*!< \brief initialize the surfaces to NULL. */
 	Surf_X = NULL;
 	Surf_O = NULL;
 

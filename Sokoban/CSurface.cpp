@@ -1,31 +1,53 @@
+/*! \file CApp.h
+    \brief Header definitions for the core of our program.
+    
+    Details.
+	
+	\author Petar Jerčić
+*/
+
 #include "CSurface.h"
- 
+
+//! A constructor.
+/*!
+	A more elaborate description of the constructor in CPP.
+*/
 CSurface::CSurface() {
 }
- 
+
+//! Load image in memory
+/*!
+	There are a couple of important things to note here. Firstly, always remember that when you make a pointer to set it to NULL, or 0. Many problems can come along later if you fail to do this. Secondly, notice how SDL_DisplayFormat returns a new Surface, and doesn't overwrite the original. This important to remember because since it creates a new surface, we have to free the old one. Otherwise, we have a surface floating around in memory.
+*/
 SDL_Surface* CSurface::OnLoad(char* File, SDL_Surface*    Screen_Display) {
 
-    SDL_Surface* Surf_Return = NULL;
+    SDL_Surface* Surf_Return = NULL;	/*!< \brief pointer to set it to NULL, or 0. */
  
-	if ((Surf_Return = IMG_Load(File)) == NULL) {
+	if ((Surf_Return = IMG_Load(File)) == NULL) {	/*!< \brief Call SDL method to load images. */
+		printf("Failed to load image: %s\n", SDL_GetError());
 		return NULL;
 	}
  
-    return Surf_Return;
+    return Surf_Return;	/*!< \brief returns a new Surface. */
 
 }
 
+//! Draw surfaces onto other surfaces.
+/*!
+	The start of the function makes sure we have valid surfaces, if we don't, return false. Next, we find SDL_Rect. This is a SDL structure that basically has four members: x, y, w, h. This, of course, creates the dimensions for a rectangle. We are only worried about where we are drawing to, not the size. So we assign X, Y coordinates to the destination surface. If you are wondering what NULL is within SDL_BlitSurface, it's another parameter for a SDL_Rect. We'll get to this later on in this lesson.
+*/
 bool CSurface::OnDraw(SDL_Surface* Surf_Dest, SDL_Surface* Surf_Src, int X, int Y) {
-    if(Surf_Dest == NULL || Surf_Src == NULL) {
+    if(Surf_Dest == NULL || Surf_Src == NULL) {	/*!< \brief Test valid surfaces. */
+		printf("Failed to draw empty surfaces!\n");
         return false;
     }
  
-    SDL_Rect DestR;
+    SDL_Rect DestR;	/*!< \brief creates the dimensions for a rectangle. */
  
     DestR.x = X;
     DestR.y = Y;
  
-    SDL_BlitSurface(Surf_Src, NULL, Surf_Dest, &DestR);
+    SDL_BlitSurface(Surf_Src, NULL, Surf_Dest, &DestR);	/*!< \brief blit surface */
  
     return true;
 }

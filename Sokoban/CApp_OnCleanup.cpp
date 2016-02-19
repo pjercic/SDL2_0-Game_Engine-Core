@@ -5,7 +5,7 @@
 	We basically quit out of SDL. You should take note that in this function is where you would free other surfaces as well. This keeps all your code centralized to the function its performing.
 */
 void CApp::OnCleanup() {
-	SDL_FreeSurface(Surf_Grid);
+	SDL_FreeSurface(Surf_Grid);	/*!< \brief Free the surfaces. */
 	SDL_FreeSurface(Surf_X);
 	SDL_FreeSurface(Surf_O);
     SDL_FreeSurface(Surf_Test);

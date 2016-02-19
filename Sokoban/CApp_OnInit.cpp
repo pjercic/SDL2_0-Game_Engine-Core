@@ -27,8 +27,9 @@ bool CApp::OnInit() {
         return false;
     }
 
-	//	Test image
+	/*! \brief load an image. */
 	if((Surf_Test = CSurface::OnLoad("./gfx/yoshi.bmp", Surf_Display)) == NULL) {
+		printf("Failed to load an image\n");
         return false;
     }
 
