@@ -52,6 +52,10 @@ bool CSurface::OnDraw(SDL_Surface* Surf_Dest, SDL_Surface* Surf_Src, int X, int 
     return true;
 }
 
+//! Draw a part of surfaces onto other surfaces.
+/*!
+	Notice that it's basically the same function as our first one, except we've added another SDL_Rect. This source rect allows use to specify what pixels from the source to copy over to the destination. If we specified 0, 0, 50, 50 as parameters for X2...H, it would only draw upper left part of the surface (a 50x50 square). 
+*/
 bool CSurface::OnDraw(SDL_Surface* Surf_Dest, SDL_Surface* Surf_Src, int X, int Y, int X2, int Y2, int W, int H) {
     if(Surf_Dest == NULL || Surf_Src == NULL) {
         return false;
