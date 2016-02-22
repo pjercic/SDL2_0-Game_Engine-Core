@@ -4,7 +4,7 @@ void CApp::OnRender() {
 
 	//	Test surfaces - delete
     //CSurface::OnDraw(Surf_Display, Surf_Test, 0, 0);
-	//CSurface::OnDraw(Surf_Display, Surf_Test, 100, 100, 0, 0, 50, 50);
+	CSurface::OnDraw(Surf_Display, Surf_Grid, 100, 100, 0, 0, 50, 50);	/*!< \brief You should notice that your image is drawn at 100, 100 and only part of it is being displayed. */
 
 	//	Fill whole screen with solid color
 	

@@ -24,6 +24,12 @@
 	First of all, look at the arguments being passed to the OnDraw function. We have two surfaces, and two int variables. The first surface is the destination surface, or the surface we are going to draw on. The second surface is the source surface, or the surface we going to use to draw on another surface. Basically, we are putting Surf_Src on top of Surf_Dest. The X, Y variables is the position on the Surf_Dest where we are drawing this surface to.
 */
 
+/*! \fn static bool OnDraw(SDL_Surface* Surf_Dest, SDL_Surface* Surf_Src, int X, int Y, int X2, int Y2, int W, int H)
+    \brief Now lets take this process a little bit further. While it's nice and all to draw images to the screen, often we'll need to draw only parts of an image.
+	
+	First of all, look at the arguments being passed to the OnDraw function. We have two surfaces, and two int variables. The first surface is the destination surface, or the surface we are going to draw on. The second surface is the source surface, or the surface we going to use to draw on another surface. Basically, we are putting Surf_Src on top of Surf_Dest. The X, Y variables is the position on the Surf_Dest where we are drawing this surface to.
+*/
+
 #ifndef _CSURFACE_H_
     #define _CSURFACE_H_
  
