@@ -38,7 +38,8 @@ CApp::CApp() {
 
 	window = NULL;
     Surf_Display = NULL;
-	//Surf_Test = NULL;
+	Surf_Test = NULL;
+	Surf_Test_BG = NULL;
  
     Running = true;
 }

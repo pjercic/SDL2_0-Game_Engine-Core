@@ -1,56 +1,24 @@
-﻿Build started 10/2/16 8:08:36 .
-     1>Project "C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Sokoban\Sokoban.vcxproj" on node 2 (rebuild target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\Sokoban.lastbuildstate".
-       InitializeBuildStatus:
+﻿Build started 19/2/16 18:20:29 .
+     1>Project "C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Sokoban\Sokoban.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
          Creating "Debug\Sokoban.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CAnimation.cpp CApp.cpp CApp_OnCleanup.cpp CApp_OnEvent.cpp CApp_OnInit.cpp CApp_OnLoop.cpp CApp_OnRender.cpp CArea.cpp CCamera.cpp CEntity.cpp CEntityCol.cpp CEvent.cpp CFPS.cpp CMap.cpp CPlayer.cpp CSoundBank.cpp CSurface.cpp CTile.cpp
-         CTile.cpp
-         CSurface.cpp
-         CSoundBank.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\csoundbank.cpp(21): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\csoundbank.cpp(29): warning C4018: '>=' : signed/unsigned mismatch
-         CPlayer.cpp
-         CMap.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\cmap.cpp(66): warning C4018: '>=' : signed/unsigned mismatch
-         CFPS.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\cfps.cpp(16): warning C4018: '<' : signed/unsigned mismatch
-         CEvent.cpp
-         CEntityCol.cpp
-         CEntity.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(96): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(96): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(150): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(151): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(155): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(162): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(173): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(174): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\centity.cpp(265): warning C4018: '<' : signed/unsigned mismatch
-         CCamera.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\ccamera.cpp(21): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\ccamera.cpp(24): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\ccamera.cpp(33): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\ccamera.cpp(36): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-         CArea.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\carea.cpp(65): warning C4018: '>=' : signed/unsigned mismatch
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\carea.cpp(89): warning C4018: '>=' : signed/unsigned mismatch
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CApp.cpp CApp_OnCleanup.cpp CApp_OnEvent.cpp CApp_OnInit.cpp CApp_OnLoop.cpp CApp_OnRender.cpp
          CApp_OnRender.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\capp_onrender.cpp(36): warning C4018: '<' : signed/unsigned mismatch
-         CApp_OnLoop.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\capp_onloop.cpp(26): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\capp_onloop.cpp(33): warning C4018: '<' : signed/unsigned mismatch
          CApp_OnInit.cpp
-         CApp_OnEvent.cpp
          CApp_OnCleanup.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\capp_oncleanup.cpp(10): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pjr\desktop\breakout_test_2010_base\code_breakout\sokoban\capp_oncleanup.cpp(15): warning C4018: '<' : signed/unsigned mismatch
          CApp.cpp
-         CAnimation.cpp
-     1>c:\users\pjr\desktop\breakout_test _2010_base\sokoban\sokoban\canimation.cpp(15): warning C4018: '>' : signed/unsigned mismatch
          Generating Code...
+         Compiling...
+         CApp_OnLoop.cpp
+     1>c:\users\pjr\desktop\breakout_test_2010_base\code_breakout\sokoban\capp_onloop.cpp(26): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\pjr\desktop\breakout_test_2010_base\code_breakout\sokoban\capp_onloop.cpp(33): warning C4018: '<' : signed/unsigned mismatch
+         CApp_OnEvent.cpp
+         Generating Code...
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
        Link:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Debug\Sokoban.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_mixer.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Sokoban.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Debug\Sokoban.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Debug\Sokoban.lib" /MACHINE:X86 Debug\CAnimation.obj
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Debug\Sokoban.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_mixer.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Sokoban.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Debug\Sokoban.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Debug\Sokoban.lib" /MACHINE:X86 Debug\CAnimation.obj
          Debug\CApp.obj
          Debug\CApp_OnCleanup.obj
          Debug\CApp_OnEvent.obj
@@ -68,14 +36,15 @@
          Debug\CSoundBank.obj
          Debug\CSurface.obj
          Debug\CTile.obj
-         Sokoban.vcxproj -> C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Debug\Sokoban.exe
+         LINK : C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Debug\Sokoban.exe not found or not built by the last incremental link; performing full link
+         Sokoban.vcxproj -> C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Debug\Sokoban.exe
        Manifest:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Debug\Sokoban.exe;#1" /manifest Debug\Sokoban.exe.intermediate.manifest
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Debug\Sokoban.exe;#1" /manifest Debug\Sokoban.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\Sokoban.unsuccessfulbuild".
          Touching "Debug\Sokoban.lastbuildstate".
-     1>Done Building Project "C:\Users\pjr\Desktop\breakout_test _2010_base\Sokoban\Sokoban\Sokoban.vcxproj" (rebuild target(s)).
+     1>Done Building Project "C:\Users\pjr\Desktop\breakout_test_2010_base\code_breakout\Sokoban\Sokoban.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:26.53
+Time Elapsed 00:00:09.72
