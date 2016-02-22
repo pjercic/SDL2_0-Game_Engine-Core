@@ -1,8 +1,15 @@
+/*! \file CApp_OnEvent.cpp
+    \brief Header definitions for the core of our program.
+    
+    Details.
+	\author Petar Jerčić
+*/
+
 #include "CApp.h"
 
 //! An event procesing delegate.
 /*!
-	Calling CEvent object to resolve the SDL_Event.
+	Calling CEvent object to resolve the SDL_Event. We have the event class setup, now lets actually link events to our new class structure.
 */
 void CApp::OnEvent(SDL_Event* Event) {
     CEvent::OnEvent(Event);
@@ -82,6 +89,10 @@ void CApp::OnKeyUp(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
     }
 }
 
+//! The OnExit function handles the SDL_QUIT events. Now that we have the prototype, lets define what it does.
+/*!
+	The type above we are looking for is the request to close the window (i.e., when the user clicks the X button). If that event happens to take place, we set Running to false, thus ending our program. Simple enough.
+*/
 void CApp::OnExit() {
     Running = false;
 }

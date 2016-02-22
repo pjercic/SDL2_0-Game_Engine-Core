@@ -1,8 +1,25 @@
+/*! \file CEvent.h
+    \brief Header definitions for the core of our program.
+    
+    Details.
+	\author Petar Jerčić
+*/
+
+/*! \fn CEvent()
+    \brief A contructor.
+	
+	Elaborate details for construxctor in HEAD.
+*/
+
 #ifndef _CEVENT_H_
     #define _CEVENT_H_
  
 #include <SDL.h>
- 
+
+//! An event class.
+/*!
+	Alongside the basics of game development is something called Events. All videogames, from pong to the highly complex PC games and console titles, use events to interact with the player. These events can come from keyboards, mice, joysticks, gamepads, and so on, or events from our operating system. It's important to understand how events work if we are to appropriately interact a user with a game. We've already been using events, but only for closing our window, now we'll look at how to receive events from the user.
+*/
 class CEvent {
     public:
         CEvent();

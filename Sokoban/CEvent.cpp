@@ -1,3 +1,27 @@
+/*! \file CEvent.cpp
+    \brief The core of our program.
+    
+	The CApp class is setting the stage for our entire program. Let me step aside to take special note of how games are typically setup. Most games consist of 5 functions that handle how the game processes. These processes are typically:
+
+	Initialize
+	This function handles all the loading of data, whether it be textures, maps, NPCs, or whatever.
+
+	Event
+	This function handles all input events from the mouse, keyboard, joysticks, or other devices.
+
+	Loop
+	This function handles all the data updates, such as a NPCs moving across the screen, decreasing your health bar, or whatever
+
+	Render
+	This function handles all the rendering of anything that shows up on the screen. It does NOT handle data manipulation, as this is what the Loop function is supposed to handle.
+
+	Cleanup
+	This function simply cleans up any resources loaded, and insures a peaceful quitting of the game.
+
+	It's important to understand that games are one gigantic loop. Within this loop we find events, update data, and render pictures.
+
+*/
+
 #include "CEvent.h"
  
 CEvent::CEvent() {
@@ -9,7 +33,7 @@ CEvent::~CEvent() {
 
 //! An event procesor.
 /*!
-	The type above we are looking for is the request to close the window (i.e., when the user clicks the X button). If that event happens to take place, we set Running to false, thus ending our program. Simple enough.
+	Lots of code, but all the SDL events should be covered. What we basically are doing is taking an SDL_Event pointer, and switching through the types, and then calling the appropriate function. It just looks like a lot since they are quite a bit of events.
 */
 void CEvent::OnEvent(SDL_Event* Event) {
     switch(Event->type) {

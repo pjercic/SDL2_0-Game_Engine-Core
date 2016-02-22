@@ -44,6 +44,12 @@
 	The SDL event structure is broken down into types. These types can range from keypresses, to mouse movements; what we simply are doing here is checking the event type.
 */
 
+/*! \fn void OnExit()
+    \brief Process exit event
+	
+	We're passing the Event structure to our class now, it will take care of the correct function calls. Now when we want to check for an event, we override the function. Since we got rid of checking for the SDL_QUIT event, lets use the function instead.
+*/
+
 /*! \fn int OnCleanup()
     \brief Clean up object and quit SDL
 */
@@ -53,6 +59,8 @@
     \param mX X position.
     \param mY Y position.
 */
+
+
 
 #ifndef _CAPP_H_
     #define _CAPP_H_
