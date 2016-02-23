@@ -44,6 +44,12 @@
 	The SDL event structure is broken down into types. These types can range from keypresses, to mouse movements; what we simply are doing here is checking the event type.
 */
 
+/*! \fn void OnLButtonDown(int mX, int mY)
+	\brief mouse events.
+
+	Now that we have our surfaces drawing, we'll need a way to communicate from the user to the computer. We'll use mouse events for this. When the users clicks a cell it will set the cell appropriately. We are going to need to overload one of the CEvent functions for this.
+*/
+
 /*! \fn int OnCleanup()
     \brief Clean up object and quit SDL
 */
@@ -52,6 +58,14 @@
     \brief Event for left click .
     \param mX X position.
     \param mY Y position.
+*/
+
+/*! \fn void Reset()
+	\brief a way to reset the board.
+*/
+
+/*! \fn void SetCell(int ID, int Type)
+	\brief So far so good. The next thing we are going to have to do is make the ability to place effect on the screen. Lets create a new function that will handle this.
 */
 
 #ifndef _CAPP_H_
@@ -83,14 +97,11 @@ class CApp : public CEvent {
         SDL_Surface*    Surf_Display;
  
 		//	Test surface
-        SDL_Surface*    Surf_Test;
-		SDL_Surface*    Surf_Test_BG;
-
-	private:
-		SDL_Surface*    Surf_Grid;
-
-		SDL_Surface*    Surf_X;
-		SDL_Surface*    Surf_O;
+        SDL_Surface*    Surf_Paddle;
+		SDL_Surface*    Surf_PaddleSmall;
+		SDL_Surface*    Surf_Ball;
+		SDL_Surface*    Surf_BallBreak;
+		SDL_Surface*    Surf_Background;
 
 		CAnimation      Anim_Yoshi;
 
@@ -105,16 +116,16 @@ class CApp : public CEvent {
         int SoundB;
 
 	private:
-		int        Grid[9];
+		int        Effect[9];	/*!< What we are going to have to do is make an array of 9 containers, the values in this array will tell us the values for each effect active. So, effects are in a LIFO queue up to the maximum of 9. */
 
 		int CurrentPlayer;
 
-		//! An enum.
-		/*! More detailed enum description. */
+		//! An effects enum.
+		/*! Two possible effects. To make things a little neater than having 0, 1, 2 as values, we'll use an enum instead. If you are umfamiliar with how an enum works, try finding a quick tutorial on them. Just know that EFF_TYPE_NONE = 0, EFF_TYPE_BREAK = 1, and EFF_TYPE_SHORT = 2. */
 		enum {
-			GRID_TYPE_NONE = 0,
-			GRID_TYPE_X,
-			GRID_TYPE_O
+			EFF_TYPE_NONE = 0,
+			EFF_TYPE_BREAK,
+			EFF_TYPE_SHORT
 		};
  
     public:

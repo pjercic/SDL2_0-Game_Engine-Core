@@ -6,11 +6,11 @@ void CApp::OnLoop() {
 	int o_num[3] = { 17, 15, 11 }; int o = 0;
 	int x_num[3] = { 17, 15, 11 }; int x = 0;
 	for (int i = 0; i < 9; i++) {
-		if (Grid[i] == GRID_TYPE_O) {
+		if (Effect[i] == EFF_TYPE_BREAK) {
 			o_num[o] = i;
 			o++;
 		}
-		if (Grid[i] == GRID_TYPE_X) {
+		if (Effect[i] == EFF_TYPE_SHORT) {
 			x_num[x] = i;
 			x++;
 		}

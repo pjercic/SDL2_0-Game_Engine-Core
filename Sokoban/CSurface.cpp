@@ -74,6 +74,10 @@ bool CSurface::OnDraw(SDL_Surface* Surf_Dest, SDL_Surface* Surf_Src, int X, int 
     return true;
 }
 
+//! Set transparent key color on BMP images
+/*!
+	This function first checks to see if we have a valid surface. If so, we set a color key (transparency) for a color. The first argument is the surface to apply the color key to, the second is some flags telling SDL how to perform the operation, and the third is the color to make transparent. The flags being applied are basic, the first tells SDL to apply the color key to the source (the surface being passed) and the second tells SDL to try to use RLE acceleration (basically, try to make drawing later on faster). The third argument is a little bit more complex; we are using SDL_MapRGB in order to create a color. SDL_MapRGB takes a surface, and your requested color (R, G, B), and tries to match it as close as it can to that surface. You might be thinking why this is useful. Not all surfaces have the same color palette. Remember the old NES days where there was only a few colors that could be used? Same idea here, SDL_MapRGB takes a color and matches it with the closest color on that surface palette.
+*/
 bool CSurface::Transparent(SDL_Surface * Surf_Dest, int R, int G, int B)
 {
 	if (Surf_Dest == NULL) {

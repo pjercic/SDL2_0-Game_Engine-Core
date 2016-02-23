@@ -27,17 +27,37 @@ bool CApp::OnInit() {
         return false;
     }
 
-	/*! \brief load an image. */
-	if((Surf_Test = CSurface::OnLoad("./gfx/bluePADDLE.png", Surf_Display)) == NULL) {
+	/*! \brief load a paddle. */
+	if((Surf_Paddle = CSurface::OnLoad("./gfx/bluePADDLE.png", Surf_Display)) == NULL) {
 		printf("Failed to load an image\n");
         return false;
     }
 
-	/*! \brief load an image. */
-	if((Surf_Test_BG = CSurface::OnLoad("./gfx/tileset.png", Surf_Display)) == NULL) {
+	/*! \brief load a paddle. */
+	if ((Surf_PaddleSmall = CSurface::OnLoad("./gfx/bluePADDLEsmall.png", Surf_Display)) == NULL) {
+		printf("Failed to load an image\n");
+		return false;
+	}
+
+	/*! \brief load a ball. */
+	if ((Surf_Ball = CSurface::OnLoad("./gfx/BLUEBALL.png", Surf_Display)) == NULL) {
+		printf("Failed to load an image\n");
+		return false;
+	}
+
+	/*! \brief load a ball. */
+	if ((Surf_BallBreak = CSurface::OnLoad("./gfx/redball.png", Surf_Display)) == NULL) {
+		printf("Failed to load an image\n");
+		return false;
+	}
+
+	/*! \brief load a background image. */
+	if((Surf_Background = CSurface::OnLoad("./gfx/background0.png", Surf_Display)) == NULL) {
 		printf("Failed to load an image\n");
         return false;
     }
+
+	Reset();
 
 	//	If needed, filter out rpeated events with 
 
