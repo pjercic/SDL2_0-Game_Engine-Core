@@ -73,12 +73,20 @@ int CApp::OnExecute() {
 	return 0;	/*!< Get back */
 }
 
+//! Reset the effects.
+/*!
+	This loop will set every cell in the grid to GRID_TYPE_NONE, meaning that all the cells are empty. We're going to have to do this at the very beginning when our program is loaded.
+*/
 void CApp::Reset() {
 	for (int i = 0; i < 9; i++) {
 		Grid[i] = GRID_TYPE_NONE;
 	}
 }
 
+//! Set an effect.
+/*!
+	This function takes two arguments, the first is the cell ID to change, and the second is the type to change it to. We have to conditions here, the first is to make sure we don't go outside the bounds of the array (if we did it would likely crash our program), and the second is to make sure we passed an appropriate type. Simple enough. 
+*/
 void CApp::SetCell(int ID, int Type)
 {
 	if (ID < 0 || ID >= 9) return;

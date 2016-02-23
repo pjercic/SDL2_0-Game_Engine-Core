@@ -15,6 +15,10 @@ void CApp::OnEvent(SDL_Event* Event) {
     CEvent::OnEvent(Event);
 }
 
+//! Mouse event.
+/*!
+	First, we are doing the reverse of what we did with translating to X and Y from an ID, this time we are translating to an ID. We then make sure that that cell hasn't already been taken, if it has, we return out of the function. Next, we are checking which players turn it is, set the cell appropriately, and then switch turns. 
+*/
 void CApp::OnLButtonDown(int mX, int mY)
 {
 	int ID = mX / 200;

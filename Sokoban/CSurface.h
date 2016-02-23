@@ -30,6 +30,12 @@
 	First of all, look at the arguments being passed to the OnDraw function. We have two surfaces, and two int variables. The first surface is the destination surface, or the surface we are going to draw on. The second surface is the source surface, or the surface we going to use to draw on another surface. Basically, we are putting Surf_Src on top of Surf_Dest. The X, Y variables is the position on the Surf_Dest where we are drawing this surface to.
 */
 
+/*! \fn static bool Transparent(SDL_Surface* Surf_Dest, int R, int G, int B)
+	\brief we are going to implement transparency onto these surfaces. Basically, wherever there is pink, it will show through; we will make the pink color transparent.
+
+	SDL offers a simple function to do this, SDL_SetColorKey. Notice 3 extra arguments being passed besides the surface. These are the 3 color values that we want to make transparent, it doesn't have to be just pink. For instance, it we wanted red to be transparent it would be 255, 0, 0.
+*/
+
 #ifndef _CSURFACE_H_
     #define _CSURFACE_H_
  

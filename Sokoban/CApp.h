@@ -44,6 +44,12 @@
 	The SDL event structure is broken down into types. These types can range from keypresses, to mouse movements; what we simply are doing here is checking the event type.
 */
 
+/*! \fn void OnLButtonDown(int mX, int mY)
+	\brief mouse events.
+
+	Now that we have our surfaces drawing, we'll need a way to communicate from the user to the computer. We'll use mouse events for this. When the users clicks a cell it will set the cell appropriately. We are going to need to overload one of the CEvent functions for this.
+*/
+
 /*! \fn void OnExit()
     \brief Process exit event
 	
@@ -60,7 +66,13 @@
     \param mY Y position.
 */
 
+/*! \fn void Reset()
+	\brief a way to reset the board.
+*/
 
+/*! \fn void SetCell(int ID, int Type)
+	\brief So far so good. The next thing we are going to have to do is make the ability to place effect on the screen. Lets create a new function that will handle this.
+*/
 
 #ifndef _CAPP_H_
     #define _CAPP_H_
