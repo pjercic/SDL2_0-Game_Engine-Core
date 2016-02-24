@@ -30,7 +30,7 @@ void CApp::OnRender() {
 		}
 	}
 
-	CSurface::OnDraw(Surf_Display, Surf_Test, 290, 220, 0, Anim_Yoshi.GetCurrentFrame() * 64, 64, 64);
+	CSurface::OnDraw(Surf_Display, Surf_Test, 290, 220, 0, Anim_Yoshi.GetCurrentFrame() * 64, 64, 64);	/*!< \brief to make it actually animate. */
 
 	for (int i = 0; i < CEntity::EntityList.size(); i++) {
 		if (!CEntity::EntityList[i]) continue;

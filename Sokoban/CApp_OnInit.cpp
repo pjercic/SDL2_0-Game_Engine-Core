@@ -52,9 +52,9 @@ bool CApp::OnInit() {
 
 	Reset();
 
-	Anim_Yoshi.MaxFrames = 8;
+	Anim_Yoshi.MaxFrames = 8;	/*!< \brief Now, lets set the MaxFrames. */
 
-	Anim_Yoshi.Oscillate = false;
+	Anim_Yoshi.Oscillate = true;	/*!< \brief If you want to see your animation Oscillate. */
 
 	if (Entity1.OnLoad("./gfx/yoshi.bmp", 64, 64, 8, Surf_Display) == false) {
 		return false;

@@ -111,7 +111,7 @@ class CApp : public CEvent {
 		SDL_Surface*    Surf_X;
 		SDL_Surface*    Surf_O;
 
-		CAnimation      Anim_Yoshi;
+		CAnimation      Anim_Yoshi;	/*!< \brief Create a new CAnimation object. */
 
 	private:
 		CEntity         Entity1;
