@@ -21,7 +21,7 @@ void CApp::OnLoop() {
 
 	/*	My addition, check for win	*/
 
-	Anim_Yoshi.OnAnimate();
+	Anim_Yoshi.OnAnimate();	/*!< \brief now to make our animation loop. */
 
 	for (int i = 0; i < CEntity::EntityList.size(); i++) {
 		if (!CEntity::EntityList[i]) continue;

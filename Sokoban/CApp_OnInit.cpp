@@ -59,6 +59,16 @@ bool CApp::OnInit() {
 
 	Reset();
 
+	/*! \brief load an image. */
+	if ((Surf_Animation = CSurface::OnLoad("./gfx/yoshi.png", Surf_Display)) == NULL) {
+		printf("Failed to load an image\n");
+		return false;
+	}
+
+	Anim_Yoshi.MaxFrames = 8;	/*!< \brief Now, lets set the MaxFrames. */
+
+	Anim_Yoshi.Oscillate = true;	/*!< \brief If you want to see your animation Oscillate. */
+
 	//	If needed, filter out rpeated events with 
 
 	//SDL_Event event;

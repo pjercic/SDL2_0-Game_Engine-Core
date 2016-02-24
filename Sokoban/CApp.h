@@ -102,6 +102,7 @@ class CApp : public CEvent {
 		SDL_Surface*    Surf_Ball;
 		SDL_Surface*    Surf_BallBreak;
 		SDL_Surface*    Surf_Background;
+		SDL_Surface*    Surf_Animation;
 
 		CAnimation      Anim_Yoshi;
 

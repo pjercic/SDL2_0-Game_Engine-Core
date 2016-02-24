@@ -35,6 +35,8 @@ void CApp::OnRender() {
 		CSurface::OnDraw(Surf_Display, Surf_PaddleSmall, 0, 0);
 	else
 		CSurface::OnDraw(Surf_Display, Surf_Paddle, 0, 0);
+
+	CSurface::OnDraw(Surf_Display, Surf_Animation, 290, 220, 0, Anim_Yoshi.GetCurrentFrame() * 64, 64, 64);	/*!< \brief to make it actually animate. */
 		
 	//Update the surface
 	/*! Notice a new function here SDL_Flip. This basically refreshes the buffer and displays Surf_Display onto the screen. This is called double buffering. It's the process of drawing everything into memory, and then finally drawing everything to the screen. If we didn't do this, we would have images flickering on the screen. Remember the SDL_DOUBLEBUF flag? This is what turns double buffering on. */
