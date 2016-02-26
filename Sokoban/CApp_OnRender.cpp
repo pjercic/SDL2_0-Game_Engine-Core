@@ -26,17 +26,27 @@ void CApp::OnRender() {
 			smallPaddle = true;
 	}
 
-	if (breakBall)
-		CSurface::OnDraw(Surf_Display, Surf_BallBreak, 100, 100);
-	else
-		CSurface::OnDraw(Surf_Display, Surf_Ball, 100, 100);
+	/*! \brief we are basically encapsulating the basic functions of a game within the Entity class? We have to call those functions now in the respective CApp functions.
 
-	if (smallPaddle)
-		CSurface::OnDraw(Surf_Display, Surf_PaddleSmall, 0, 0);
-	else
-		CSurface::OnDraw(Surf_Display, Surf_Paddle, 0, 0);
+	We are basically running through each Entity in our vector, and calling the OnLoop function. Simple enough! (And we're doing an error checking so we don't call any NULL pointers).*/
 
-	CSurface::OnDraw(Surf_Display, Surf_Animation, 290, 220, 0, Anim_Yoshi.GetCurrentFrame() * 64, 64, 64);	/*!< \brief to make it actually animate. */
+	for (int i = 0; i < CEntity::EntityList.size(); i++) {
+		if (!CEntity::EntityList[i]) continue;
+
+		CEntity::EntityList[i]->OnRender(Surf_Display);
+	}
+
+	//if (breakBall)
+	//	CSurface::OnDraw(Surf_Display, Surf_BallBreak, 100, 100);
+	//else
+	//	CSurface::OnDraw(Surf_Display, Surf_Ball, 100, 100);
+
+	//if (smallPaddle)
+	//	CSurface::OnDraw(Surf_Display, Surf_PaddleSmall, 0, 0);
+	//else
+	//	CSurface::OnDraw(Surf_Display, Surf_Paddle, 0, 0);
+
+	//CSurface::OnDraw(Surf_Display, Surf_Animation, 290, 220, 0, Anim_Yoshi.GetCurrentFrame() * 64, 64, 64);	/*!< \brief to make it actually animate. */
 		
 	//Update the surface
 	/*! Notice a new function here SDL_Flip. This basically refreshes the buffer and displays Surf_Display onto the screen. This is called double buffering. It's the process of drawing everything into memory, and then finally drawing everything to the screen. If we didn't do this, we would have images flickering on the screen. Remember the SDL_DOUBLEBUF flag? This is what turns double buffering on. */

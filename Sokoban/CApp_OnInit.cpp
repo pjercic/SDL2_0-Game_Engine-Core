@@ -57,8 +57,6 @@ bool CApp::OnInit() {
         return false;
     }
 
-	Reset();
-
 	/*! \brief load an image. */
 	if ((Surf_Animation = CSurface::OnLoad("./gfx/yoshi.png", Surf_Display)) == NULL) {
 		printf("Failed to load an image\n");
@@ -68,6 +66,23 @@ bool CApp::OnInit() {
 	Anim_Yoshi.MaxFrames = 8;	/*!< \brief Now, lets set the MaxFrames. */
 
 	Anim_Yoshi.Oscillate = true;	/*!< \brief If you want to see your animation Oscillate. */
+
+	/*! \brief Load enttities that move. */
+	if (Entity1.OnLoad("./gfx/bluePADDLE.png", 103, 27, 0, Surf_Display) == false) {
+		return false;
+	}
+
+	if (Entity2.OnLoad("./gfx/BLUEBALL.png", 128, 138, 0, Surf_Display) == false) {
+		return false;
+	}
+
+	Entity1.X = 100;
+	Entity2.X = 200;
+
+	CEntity::EntityList.push_back(&Entity1);
+	CEntity::EntityList.push_back(&Entity2);
+
+	Reset();
 
 	//	If needed, filter out rpeated events with 
 
