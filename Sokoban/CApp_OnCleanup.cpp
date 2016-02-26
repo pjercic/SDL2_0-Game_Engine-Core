@@ -11,6 +11,9 @@ void CApp::OnCleanup() {
     SDL_FreeSurface(Surf_Test);
     SDL_FreeSurface(Surf_Display);	/*!< \brief To keep things tidy, lets also set the Surf_Display pointer to NULL. */
 
+	/*! \brief we are basically encapsulating the basic functions of a game within the Entity class? We have to call those functions now in the respective CApp functions. 
+	
+	We are basically running through each Entity in our vector, and calling the OnLoop function. Simple enough! (And we're doing an error checking so we don't call any NULL pointers).*/
 	for (int i = 0; i < CEntity::EntityList.size(); i++) {
 		if (!CEntity::EntityList[i]) continue;
 

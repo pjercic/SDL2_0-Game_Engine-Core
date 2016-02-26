@@ -1,3 +1,10 @@
+/*! \file CEntity.cpp
+    \brief Header definitions for the entities of our program.
+    
+    Details.
+	\author Petar Jerčić
+*/
+
 #include "CEntity.h"
 
 std::vector<CEntity*> CEntity::EntityList;
