@@ -18,6 +18,8 @@ CSurface::CSurface() {
 //! Load image in memory
 /*!
 	There are a couple of important things to note here. Firstly, always remember that when you make a pointer to set it to NULL, or 0. Many problems can come along later if you fail to do this. Secondly, notice how SDL_DisplayFormat returns a new Surface, and doesn't overwrite the original. This important to remember because since it creates a new surface, we have to free the old one. Otherwise, we have a surface floating around in memory.
+	
+	Remember I said BMPs don't support alpha layers? Well, PNGs do!
 */
 SDL_Surface* CSurface::OnLoad(char* File, SDL_Surface*    Screen_Display) {
 
