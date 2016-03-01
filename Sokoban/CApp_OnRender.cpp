@@ -36,6 +36,8 @@ void CApp::OnRender() {
 		CEntity::EntityList[i]->OnRender(Surf_Display);
 	}
 
+	CArea::AreaControl.OnRender(Surf_Display, -CCamera::CameraControl.GetX(), -CCamera::CameraControl.GetY());
+
 	//if (breakBall)
 	//	CSurface::OnDraw(Surf_Display, Surf_BallBreak, 100, 100);
 	//else

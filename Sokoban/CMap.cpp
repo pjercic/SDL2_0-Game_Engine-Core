@@ -10,6 +10,7 @@ bool CMap::OnLoad(char* File) {
 	FILE* FileHandle = fopen(File, "r");
 
 	if (FileHandle == NULL) {
+		printf("Map recieved empty handle\n");
 		return false;
 	}
 

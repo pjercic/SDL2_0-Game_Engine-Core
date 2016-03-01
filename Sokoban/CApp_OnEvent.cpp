@@ -18,9 +18,9 @@ void CApp::OnLButtonDown(int mX, int mY)
 	;
 }
 
-/*	If you want to control the camera
-void CApp::OnKeyDown(SDL_Keycode sym, SDL_Keymod mod, Uint16 unicode) {
-	switch (sym) {
+//	If you want to control the camera
+void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
+	switch (sym.sym) {
 	case SDLK_UP:      CCamera::CameraControl.OnMove(0, 5); break;
 	case SDLK_DOWN:  CCamera::CameraControl.OnMove(0, -5); break;
 	case SDLK_LEFT:  CCamera::CameraControl.OnMove(5, 0); break;
@@ -30,8 +30,9 @@ void CApp::OnKeyDown(SDL_Keycode sym, SDL_Keymod mod, Uint16 unicode) {
 	}
 	}
 }
- */
 
+
+/*
 void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
 	switch(sym.sym) {
         case SDLK_LEFT: {
@@ -55,7 +56,8 @@ void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
         }
     }
 }
- 
+ */
+
 void CApp::OnKeyUp(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
     switch(sym.sym) {
         case SDLK_LEFT: {

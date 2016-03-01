@@ -12,6 +12,7 @@ bool CArea::OnLoad(char* File, SDL_Surface*    Screen_Display) {
 	FILE* FileHandle = fopen(File, "r");
 
 	if (FileHandle == NULL) {
+		printf("Area recieved empty handle\n");
 		return false;
 	}
 
@@ -20,6 +21,7 @@ bool CArea::OnLoad(char* File, SDL_Surface*    Screen_Display) {
 	fscanf(FileHandle, "%s\n", TilesetFile);
 
 	if ((Surf_Tileset = CSurface::OnLoad(TilesetFile, Screen_Display)) == false) {
+		printf("Area failedto load tielset\n");
 		fclose(FileHandle);
 
 		return false;
@@ -35,6 +37,7 @@ bool CArea::OnLoad(char* File, SDL_Surface*    Screen_Display) {
 
 			CMap tempMap;
 			if (tempMap.OnLoad(MapFile) == false) {
+				printf("Area failed to open map file\n");
 				fclose(FileHandle);
 
 				return false;
