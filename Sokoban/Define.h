@@ -1,3 +1,11 @@
+/*! \file CTile.h
+    \brief This file is going to hold some constant values, as defines, that will define things like map width and height, screen width and height, and tile size.
+    
+    These are going to be some values that we will be using throughout making our Maps and such.
+	
+	\author Petar Jerčić
+*/
+
 #ifndef _DEFINE_H_
 #define _DEFINE_H_
 
@@ -11,3 +19,4 @@
 #define	SCREEN_HEIGHT	480
 
 #endif
+

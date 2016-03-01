@@ -70,6 +70,7 @@ bool CApp::OnInit() {
 	CEntity::EntityList.push_back(&Entity2);
 
 	if (CArea::AreaControl.OnLoad("./maps/1.area",Surf_Display) == false) {
+		printf("Failed to load a map\n");
 		return false;
 	}
 
