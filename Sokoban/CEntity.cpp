@@ -242,15 +242,15 @@ bool CEntity::Collides(int oX, int oY, int oW, int oH) {
 bool CEntity::PosValid(int NewX, int NewY) {
     bool Return = true;
  
-    int StartX     = (NewX + Col_X) / TILE_SIZE;
-    int StartY     = (NewY + Col_Y) / TILE_SIZE;
+    int StartX     = (NewX + Col_X) / TILE_WIDTH;
+    int StartY     = (NewY + Col_Y) / TILE_HEIGHT;
  
-    int EndX    = ((NewX + Col_X) + Width - Col_Width - 1)         / TILE_SIZE;
-    int EndY    = ((NewY + Col_Y) + Height - Col_Height - 1)    / TILE_SIZE;
+    int EndX    = ((NewX + Col_X) + Width - Col_Width - 1)         / TILE_WIDTH;
+    int EndY    = ((NewY + Col_Y) + Height - Col_Height - 1)    / TILE_HEIGHT;
  
     for(int iY = StartY;iY <= EndY;iY++) {
         for(int iX = StartX;iX <= EndX;iX++) {
-            CTile* Tile = CArea::AreaControl.GetTile(iX * TILE_SIZE, iY * TILE_SIZE);
+            CTile* Tile = CArea::AreaControl.GetTile(iX * TILE_WIDTH, iY * TILE_HEIGHT);
  
             if(PosValidTile(Tile) == false) {
                 Return = false;

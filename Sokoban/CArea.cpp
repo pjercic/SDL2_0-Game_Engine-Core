@@ -56,8 +56,8 @@ bool CArea::OnLoad(char* File, SDL_Surface*    Screen_Display) {
 }
 
 void CArea::OnRender(SDL_Surface* Surf_Display, int CameraX, int CameraY) {
-	int MapWidth = MAP_WIDTH * TILE_SIZE;
-	int MapHeight = MAP_HEIGHT * TILE_SIZE;
+	int MapWidth = MAP_WIDTH * TILE_WIDTH;
+	int MapHeight = MAP_HEIGHT * TILE_HEIGHT;
 
 	int FirstID = -CameraX / MapWidth;
 	FirstID = FirstID + ((-CameraY / MapHeight) * AreaSize);
@@ -83,8 +83,8 @@ void CArea::OnCleanup() {
 }
 
 CMap* CArea::GetMap(int X, int Y) {
-    int MapWidth  = MAP_WIDTH * TILE_SIZE;
-    int MapHeight = MAP_HEIGHT * TILE_SIZE;
+    int MapWidth  = MAP_WIDTH * TILE_WIDTH;
+    int MapHeight = MAP_HEIGHT * TILE_HEIGHT;
  
     int ID = X / MapWidth;
         ID = ID + ((Y / MapHeight) * AreaSize);
@@ -97,8 +97,8 @@ CMap* CArea::GetMap(int X, int Y) {
 }
  
 CTile* CArea::GetTile(int X, int Y) {
-    int MapWidth  = MAP_WIDTH * TILE_SIZE;
-    int MapHeight = MAP_HEIGHT * TILE_SIZE;
+    int MapWidth  = MAP_WIDTH * TILE_WIDTH;
+    int MapHeight = MAP_HEIGHT * TILE_HEIGHT;
  
     CMap* Map = GetMap(X, Y);
  

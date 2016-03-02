@@ -33,8 +33,8 @@ bool CMap::OnLoad(char* File) {
 void CMap::OnRender(SDL_Surface* Surf_Display, int MapX, int MapY) {
 	if (Surf_Tileset == NULL) return;
 
-	int TilesetWidth = Surf_Tileset->w / TILE_SIZE;
-	int TilesetHeight = Surf_Tileset->h / TILE_SIZE;
+	int TilesetWidth = Surf_Tileset->w / TILE_WIDTH;
+	int TilesetHeight = Surf_Tileset->h / TILE_HEIGHT;
 
 	int ID = 0;
 
@@ -45,13 +45,13 @@ void CMap::OnRender(SDL_Surface* Surf_Display, int MapX, int MapY) {
 				continue;
 			}
 
-			int tX = MapX + (X * TILE_SIZE);
-			int tY = MapY + (Y * TILE_SIZE);
+			int tX = MapX + (X * TILE_WIDTH);
+			int tY = MapY + (Y * TILE_HEIGHT);
 
-			int TilesetX = (TileList[ID].TileID % TilesetWidth) * TILE_SIZE;
-			int TilesetY = (TileList[ID].TileID / TilesetWidth) * TILE_SIZE;
+			int TilesetX = (TileList[ID].TileID % TilesetWidth) * TILE_WIDTH;
+			int TilesetY = (TileList[ID].TileID / TilesetWidth) * TILE_HEIGHT;
 
-			CSurface::OnDraw(Surf_Display, Surf_Tileset, tX, tY, TilesetX, TilesetY, TILE_SIZE, TILE_SIZE);
+			CSurface::OnDraw(Surf_Display, Surf_Tileset, tX, tY, TilesetX, TilesetY, TILE_WIDTH, TILE_HEIGHT);
 
 			ID++;
 		}
@@ -61,8 +61,8 @@ void CMap::OnRender(SDL_Surface* Surf_Display, int MapX, int MapY) {
 CTile* CMap::GetTile(int X, int Y) {
     int ID = 0;
  
-    ID = X / TILE_SIZE;
-    ID = ID + (MAP_WIDTH * (Y / TILE_SIZE));
+    ID = X / TILE_WIDTH;
+    ID = ID + (MAP_WIDTH * (Y / TILE_HEIGHT));
  
     if(ID < 0 || ID >= TileList.size()) {
         return NULL;
