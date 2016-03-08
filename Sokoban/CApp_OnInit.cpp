@@ -82,6 +82,12 @@ bool CApp::OnInit() {
 	CEntity::EntityList.push_back(&Entity1);
 	CEntity::EntityList.push_back(&Entity2);
 
+	//	Load XML
+	if (CXmlParse::XmlParseControl.OnLoad("./maps/breakout_config.xml") == false) {
+		printf("Failed to load XML configuration\n");
+		return false;
+	}
+
 	if (CArea::AreaControl.OnLoad("./maps/bricks_1.area", Surf_Display) == false) {
 		printf("Failed to load a map\n");
 		return false;

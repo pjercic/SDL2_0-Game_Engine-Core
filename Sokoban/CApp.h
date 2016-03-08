@@ -82,6 +82,7 @@
 #include "CCamera.h"
 #include "CPlayer.h"
 #include "CSoundBank.h"
+#include "CXmlParse.h"
  
 //!  A core program class.
 /*!
