@@ -38,7 +38,8 @@ void CApp::OnLButtonDown(int mX, int mY)
 	}
 }
 
-/*	If you want to control the camera
+/*	We aren't going to be controlling the camera anymore, but we'll be controlling our main Player who will dictate where the camera goes.
+	If you want to control the camera, use the code bellow
 void CApp::OnKeyDown(SDL_Keycode sym, SDL_Keymod mod, Uint16 unicode) {
 	switch (sym) {
 	case SDLK_UP:      CCamera::CameraControl.OnMove(0, 5); break;

@@ -25,6 +25,8 @@ CEntity::CEntity() {
 	Type = ENTITY_TYPE_GENERIC;
 
 	Dead = false;
+	
+	/*!< These are used to determine certain properties about an entity. For example, an entity that is affected by gravity will have the ENTITY_FLAG_GRAVITY turned on. An Entity that can go through walls, will have ENTITY_FLAG_GHOST turned on. An entity that only collides with the map, and not other entities, will have ENTITY_FLAG_MAPONLY turned on. Now, notice how we have them numbered in hex. This is because we're treating the Flags in binary. This way, we can activate multiple flags at once: */
 	Flags = ENTITY_FLAG_GRAVITY;
 
 	SpeedX = 0;
@@ -85,6 +87,8 @@ void CEntity::OnLoop() {
 		AccelY = 0.75f;
 	}
 
+	/*! I want my player to increase in speed 1 pixel per second. This would be: */
+	
 	SpeedX += AccelX * CFPS::FPSControl.GetSpeedFactor();
 	SpeedY += AccelY * CFPS::FPSControl.GetSpeedFactor();
 
@@ -137,6 +141,11 @@ void CEntity::OnMove(float MoveX, float MoveY) {
 	double NewX = 0;
 	double NewY = 0;
 
+	/*! Notice we multiply the AccelX by the Speed Factor. That's because we want to increase the speed 1 pixel every second. If I wanted to increase the speed 1 pixel every loop, I would leave the speed factor out of it. Now, when OnMove receives these Speed variables, it also has to figure in the speed factor: 
+	
+	(MoveX and MoveY are the arguments passed to OnMove). Now, the SpeedX and SpeedY only determine how fast we want to move per second. So we have to multiply it by the speed factor. A little hint for you people out there, the entire speed of the game is determined by the Speed Factor! If we changed the Speed Factor of the game, it would determine how fast anything in the games moves. Slow motion deaths anyone?
+
+	Now, whenever an Entity moves, there are some things to consider. Say in one loop we are supposed to move the Entity 4 pixels (slow computer perhaps, or really fast entity). Now, lets say 2 pixels away there is a wall. Now, if we checked 4 pixels in front of use, we wouldn't let our guy move. But, we still want him to move as close as he can. So, to move this 2 pixel distance, we have to check every pixel along the way. Now, you might be thinking this will be slow. Well, not really. Someone with a 100 FPS who wants to move 5 pixels a second (a reasonable speed), will move less than one pixel every loop (0.05 to be exact). So, every loop, this entity moves 0.05 pixels over. That means we have 1 or 2 checks when checking for collisions for that entity. More explanation on this later when we actually implement moving. */
 	MoveX *= CFPS::FPSControl.GetSpeedFactor();
 	MoveY *= CFPS::FPSControl.GetSpeedFactor();
 
