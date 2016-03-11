@@ -54,6 +54,20 @@
 	Back in previous tutorials we had a Yoshi image we were using. If you notice, it would make little sense to use the width of the image for collision purposes. Yoshi doesn't actually come to the edges of the images; so, we have to offset it a little, so when Yoshi runs into a wall it actually looks like his nose is hitting the wall, and not being a few pixels away. And since these variables are used to collision purposes only, I have prefixed them with Col_.
 */
 
+/*! \var int CurrentFrameCol
+    \brief Next, we have some Animation variables.
+	
+	There are only two of them: CurrentFrameCol, and CurrentFrameRow. These two determine where on our image we start to find individual frames of an animation. A CurrentFrameCol and CurrentFrameRow would be the top left of the image. Moving over one column would change things. Think of it like tilesets.
+*/
+
+/*! \var int Type
+    \brief and the type of entity.
+*/
+
+/*! \var bool Dead
+    \brief Last, but not least, we have variables to indicate if a variable is dead.
+*/
+	
 /*! \fn virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames, SDL_Surface*    Screen_Display)
     \brief we have a loading function that basically takes a filename, and loads the image. 
 	
@@ -117,6 +131,8 @@
 #include "CCamera.h"
 #include "CFPS.h"
 
+//! An enum.
+/*! You'll notice we have another enum, like the Flags, to specify the type of entity. This is important when dealing with collision events. So, back to the Mario and Spike example; lets say a Goomba happens to step in a spike. Now, in Mario world, the Goomba would not die. So, the Spike needs to know that entities type. Simple enough I think. */
 enum {
 	ENTITY_TYPE_GENERIC = 0,
 
