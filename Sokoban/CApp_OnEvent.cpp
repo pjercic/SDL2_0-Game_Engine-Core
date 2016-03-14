@@ -72,7 +72,7 @@ void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
         }
 
 		case SDLK_SPACE: {
-			Player.Jump();
+			Player.Jump();	/*!< \brief Jump on keyboard space event. */
 			break;
 		}
  

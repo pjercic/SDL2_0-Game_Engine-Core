@@ -164,7 +164,7 @@ bool CEntity::OnCollision(CEntity* Entity) {
 */
 void CEntity::OnMove(float MoveX, float MoveY) {
 
-	CanJump = false;
+	CanJump = false;	/*!< \brief We're going to figure out when our entity is allowed to jump. An entity is allowed to jump whenever it is touching the ground - or, in other words, whenever the entity is no longer moving on the positive Y-axis. So, at the top, we are first always going to reset CanJump to false. */
 
 	if (MoveX == 0 && MoveY == 0) return;
 
@@ -197,6 +197,11 @@ void CEntity::OnMove(float MoveX, float MoveY) {
 			Y += NewY;
 		}
 		else {
+			
+			/*! \brief Now, to run through everything we did. First, we have a flag that states if an entity can jump. When set to true, we are allowed to call the Jump function. This CanJump variable is always false, unless our feet are on the ground. Whenever we actually do want to jump, we simply set our SpeedY in the negative Y-axis direction (up). Remember, gravity is always pushing us down, but at a slow speed. So, if we have a SpeedY of -5, and a AccelY of 0.75, we'll move up for a time, gravity will kick in, and then we will eventually be pushed back down. Thus, giving the effect of a real jump. The trick here is to get the Speed and Acceleration variables just right.
+
+			Also, as a side note, the reason we made Jump return true/false is simply for informational purposes. Meaning, when a key is pressed by the player to jump, they won't always be allowed to jump. And, if you wanted, you could do something based upon what Jump() returns. */
+	
 			if (PosValid((int)(X + NewX), (int)(Y))) {
 				X += NewX;
 			}

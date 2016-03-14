@@ -46,7 +46,8 @@ void CPlayer::OnAnimate() {
 }
  
 bool CPlayer::OnCollision(CEntity* Entity) {
-    Jump();
+	
+    Jump();	/*!< \brief Jump if player(s) collide. */
  
     return true;
 }

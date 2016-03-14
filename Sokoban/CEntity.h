@@ -67,6 +67,10 @@
 /*! \var bool Dead
     \brief Last, but not least, we have variables to indicate if a variable is dead.
 */
+
+/*! \var bool CanJump
+    \brief Useful function can a character jump.
+*/
 	
 /*! \fn virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames, SDL_Surface*    Screen_Display)
     \brief we have a loading function that basically takes a filename, and loads the image. 
@@ -106,6 +110,10 @@
     \brief Now, for some movement explanation. Whenever an Entity wants to move, we do not move it to where it wants to go immediately. What we do instead, is move it in the direction we want it to go at a certain speed.
 	
 	Remember the whole CFPS class? That's why time based movement is so important. So, in the new OnMove function, we pass it how fast we want our Entity to go. If we want the Entity to move 1 pixel a second to the right, we would do OnMove(1, 0). Now, I wish it was this simple, but it's not. In real life we don't move in steps. We move according to speed and acceleration. Meaning, it takes us a little time to start moving at first (inertia). It looks unnatural to have entities jumping around. 
+*/
+
+/*! \fn bool     Jump()
+    \brief Jump our character.
 */
 
 /*! \fn bool    Collides(int oX, int oY, int oW, int oH)

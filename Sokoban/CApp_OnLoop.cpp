@@ -39,6 +39,12 @@ void CApp::OnLoop() {
 		CEntity::EntityList[i]->OnLoop();
 	}
  
+	/*! \brief We're already storing the collision events in a queue, now we need to do something with them. Open up CApp_OnLoop.cpp. You'll notice we already have a loop going for entities and we're calling OnLoop. We're basically going to do the same thing again. 
+	
+	Not much going on here. We're first iterating through every event in the queue. We then grab the two entities involved (EntityA, and EntityB), and we make sure they are valid pointers. If so, we first tell EntityA that it has collided with EntityB by calling OnCollision. Now, this is where that void to bool change comes in. EntityA can choose to prevent EntityB from knowing it has collided with him. If you remember, only Entities that are moving check for collision. This would mean EntityA is definitly a moving entity, and EntityB may or may not be moving.
+
+	Here's an example to explain why you wouldn't want to waste time calling EntityB's OnCollision. Say you fire a bullet, and it hits a rock entity. Now, lets say the rock has a flag stating it's indestructable. Our rock doesn't care its been hit. So, when the OnCollision is called for the bullet, the bullet can see the entity it has hit is indestructable. And because of that, it can create a little "bullet being destroyed" animation, and then we can ignore telling the rock about it. */
+	
 	//Collision Events
 	for(int i = 0;i < CEntityCol::EntityColList.size();i++) {
 		CEntity* EntityA = CEntityCol::EntityColList[i].EntityA;
