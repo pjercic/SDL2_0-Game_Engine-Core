@@ -74,8 +74,8 @@ bool CApp::OnInit() {
 		return false;
 	}
 
-	//	
-
+	/*! \brief Initialize players. 
+		Simple enough. We set PlayerX, the other Yoshi, over, so that we're not on top of each other initially. */
 	if(Player.OnLoad("./gfx/yoshi.png", 64, 64, 8, Surf_Display) == false) {
 		return false;
 	}
@@ -89,7 +89,7 @@ bool CApp::OnInit() {
 	CEntity::EntityList.push_back(&Player);
 	CEntity::EntityList.push_back(&Player2);
 
-	CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
+	CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;	/*!< \brief Remember I said earlier, we're going to make the camera follow our Yoshi. */
 	CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);
 
 	if((SoundA = CSoundBank::SoundControl.OnLoad("./sfx/sounda.wav")) == -1) {

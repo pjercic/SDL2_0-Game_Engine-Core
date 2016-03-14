@@ -53,6 +53,10 @@ void CApp::OnKeyDown(SDL_Keycode sym, SDL_Keymod mod, Uint16 unicode) {
 }
  */
 
+//! Keyboard event
+/*!
+	To go over this quickly, we basically check if Left or Right is pressed, and set MoveLeft or MoveRight on our Entity to true.
+*/
 void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
 	switch(sym.sym) {
         case SDLK_LEFT: {
@@ -76,7 +80,11 @@ void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
         }
     }
 }
- 
+
+//! Keyboard event
+/*!
+	If the key is depressed, we set it to false.
+*/
 void CApp::OnKeyUp(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
     switch(sym.sym) {
         case SDLK_LEFT: {

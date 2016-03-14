@@ -113,6 +113,10 @@ void CArea::OnCleanup() {
 	MapList.clear();
 }
 
+//! Get the current map
+/*!
+	Now, how it works is first by determining the size of our maps. We then translate our X,Y into an ID, and then return the CMap pointer. I won't go into how translating X,Y into an ID works, because I believe this is explained in the last tutorial.
+*/
 CMap* CArea::GetMap(int X, int Y) {
     int MapWidth  = MAP_WIDTH * TILE_SIZE;
     int MapHeight = MAP_HEIGHT * TILE_SIZE;
@@ -127,6 +131,10 @@ CMap* CArea::GetMap(int X, int Y) {
     return &MapList[ID];
 }
  
+//! Get the current tile
+/*!
+	We do a simple check for a NULL pointer (hint, hint), and then turn our X and Y into Tile coordinates. So, if our TILE_SIZE was 16, and our X was at 128, our Tile coordinate for X would be 8. Meaning, we are 8 tiles over. We finally then send this over to the Map GetTile. (Oh yes, one other function). This is why we have a GetMap function, if you are wondering. Rememember, CArea is a bunch of maps making one big area. So, we will have to determine which map is needed when grabbing tiles.
+*/
 CTile* CArea::GetTile(int X, int Y) {
     int MapWidth  = MAP_WIDTH * TILE_SIZE;
     int MapHeight = MAP_HEIGHT * TILE_SIZE;

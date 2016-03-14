@@ -50,6 +50,18 @@
 	Now that we have our surfaces drawing, we'll need a way to communicate from the user to the computer. We'll use mouse events for this. When the users clicks a cell it will set the cell appropriately. We are going to need to overload one of the CEvent functions for this.
 */
 
+/*! \fn void OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode)
+	\brief Keyboard event
+
+	Key press down.
+*/
+
+/*! \fn void OnLButtonDown(int mX, int mY)
+	\brief Keyboard event
+
+	Key release up.
+*/
+
 /*! \fn void OnExit()
     \brief Process exit event
 	

@@ -28,6 +28,10 @@
     \brief The OnRender also does what you expect, properly puts each tile on the screen and draws them using the Surf_Tileset.
 */
 
+/*! \fn CTile*    GetTile(int X, int Y)
+    \brief This is basically just like GetMap, but uses the TileList instead.
+*/
+
 #ifndef _CMAP_H_
 #define _CMAP_H_
 

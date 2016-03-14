@@ -1,3 +1,11 @@
+/*! \file CPlayer.h
+    \brief This class will be our main player and will extend our new CEntity class.
+	
+	I won't explain any of this other than it's overriding all the virtual functions from CEntity.
+	
+	\author Petar Jerčić
+*/
+
 #ifndef _CPLAYER_H_
     #define _CPLAYER_H_
  

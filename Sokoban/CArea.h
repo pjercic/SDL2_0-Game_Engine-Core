@@ -39,6 +39,17 @@
     \brief The OnRender also does what you expect, properly puts each tile on the screen and draws them using the Surf_Tileset.
 */
 
+/*! \fn CMap*    GetMap(int X, int Y)
+    \brief I know, I know... they are more complicated than they look. First, look at GetMap.
+	
+	GetMap simply returns a CMap pointer at the given coordinates. It's just like GetTile, but for Maps.
+*/
+
+/*! \fn CTile*    GetTile(int X, int Y)
+    \brief Now, go to GetTile.
+	
+	We determine the MapWidth and MapHeight, again (and I suppose this can be optimized), and then grab the Map with GetMap.
+*/
 #ifndef _CAREA_H_
 #define _CAREA_H_
 
