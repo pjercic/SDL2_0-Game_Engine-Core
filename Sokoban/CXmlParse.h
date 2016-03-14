@@ -27,6 +27,11 @@ class CXmlParseData {
 public:
 	static std::vector<CXmlParseData>    XmlParseDataList;
 
+	//	Variables tied to configuration XML file
+	char*	TilesetFile;
+	int		AreaSize;
+	char*	MapFile;
+
 public:
 	CXmlParseData();
 };
