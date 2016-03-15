@@ -10,8 +10,6 @@ bool CXmlParse::OnLoad(char* File) {
 
 	if (File != NULL) {
 
-		CXmlParseData XmlParseData;
-
 		XMLDocument doc = new XMLDocument();
 		XMLError eResult = doc.LoadFile(File);
 		int errorID = doc.ErrorID();
@@ -29,16 +27,16 @@ bool CXmlParse::OnLoad(char* File) {
 		if (pElement == nullptr) 
 			return XML_ERROR_PARSING_ELEMENT;
 		
-		////	int
-		//int iOutInt;
-		////eResult = pElement->QueryIntText(&iOutInt);
-		//eResult = pElement->QueryIntAttribute("RowCount", &XmlParseData.AreaSize);
-		//XMLCheckResult(eResult);
+		//	int
+		int iOutInt;
+		//eResult = pElement->QueryIntText(&iOutInt);
+		eResult = pElement->QueryIntAttribute("RowCount", &AreaSize);
+		XMLCheckResult(eResult);
 
 		const char * szAttributeText = nullptr;
-		//szAttributeText = pElement->Attribute("BackgroundTexture");
-		//if (XmlParseData.TilesetFile == nullptr) return XML_ERROR_PARSING_ATTRIBUTE;
-		//strcpy(XmlParseData.TilesetFile, szAttributeText);
+		szAttributeText = pElement->Attribute("BackgroundTexture");
+		if (szAttributeText == nullptr) return XML_ERROR_PARSING_ATTRIBUTE;
+		strcpy(TilesetFile, szAttributeText);
 
 		//	float
 		pElement = pRoot->FirstChildElement("Level");
