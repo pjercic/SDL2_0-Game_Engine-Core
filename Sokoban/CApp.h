@@ -10,7 +10,7 @@
     When this is set to false, it will end the program, and in turn exit the program.
 */
 
-/*! \var SDL_Window* window;
+/*! \var SDL_Window* window
     \brief Holds the handler to our window (main)
     
     When we need data about the window our game is running in (currently main), we ue this variable.
@@ -132,7 +132,7 @@ class CApp : public CEvent {
 		CPlayer			Player;
 		CPlayer			Player2;
 
-		int SoundA;
+		int SoundA;	/*!< \brief Sound ID. */
         int SoundB;
 
 	private:

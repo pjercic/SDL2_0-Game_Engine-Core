@@ -61,7 +61,7 @@ void CApp::OnKeyDown(SDL_Keysym sym, Uint16 mod, Uint16 unicode) {
 	switch(sym.sym) {
         case SDLK_LEFT: {
             Player.MoveLeft = true;
-			CSoundBank::SoundControl.Play(SoundA);
+			CSoundBank::SoundControl.Play(SoundA);	/*!< \brief Now, to make sounds when we press a key. */
             break;
         }
  

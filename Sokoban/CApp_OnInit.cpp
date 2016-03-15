@@ -11,6 +11,9 @@ bool CApp::OnInit() {
         return false;
     }
 
+	/*!< \brief we have to do a little bit to start SDL_mixer. This is just like starting up SDL, but instead we need to start up SDL_mixer to access sounds. 
+	
+	Mix_OpenAudio basically Inits SDL_mixer. This function takes 4 arguments. The first is used to specify the frequency, 44100 is usually a good number. But depending on your wav files, you may have to change this. Another common number is 22050. I won't get into detail about frequencies and such, just leave it alone unless you really need to change it. The next is the format, again, it's best to leave it unless you know much about audio (it's basically the size of the samples used, 8bit or 16bit). The next is the number of channels, 1 = mono, 2 = stereo. Note, these channels are different than the other channels I was talking about before. The other channels are "mixing channels," basically streams that I can push audio through. These channels though, are the number of audio outputs. Think of it like the number of speakers that you might have. 2 speakers, 2 channels. The last number is used to set the size of the samples (in bytes). Again, unless you really know what you are doing, it's best to leave these numbers alone. */
 	if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) < 0) {
 		printf("Failed to initialize AUDIO: %s\n", SDL_GetError());
 		return false;
@@ -92,6 +95,7 @@ bool CApp::OnInit() {
 	CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;	/*!< \brief Remember I said earlier, we're going to make the camera follow our Yoshi. */
 	CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);
 
+	/*! \brief load some sounds. */
 	if((SoundA = CSoundBank::SoundControl.OnLoad("./sfx/sounda.wav")) == -1) {
 		return false;
 	}

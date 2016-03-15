@@ -24,7 +24,7 @@ void CApp::OnCleanup() {
 
 	CArea::AreaControl.OnCleanup();
 
-	CSoundBank::SoundControl.OnCleanup();
+	CSoundBank::SoundControl.OnCleanup();	/*!< \brief To tidy things up, we need to make sure we stop the SDL_mixer service when we are done, as well as freeing any sounds we may have loaded. */
  
 	Mix_CloseAudio();	/*!< \brief Close AUDIO. */
 
